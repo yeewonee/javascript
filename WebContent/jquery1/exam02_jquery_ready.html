@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Insert title here</title>
+      <link rel="stylesheet" href="/javascript/common/bootstrap-4.6.0/css/bootstrap.min.css">
+      <script src="/javascript/common/js/jquery-3.5.1.min.js"></script>
+      <script src="/javascript/common/bootstrap-4.6.0/js/bootstrap.bundle.min.js"></script>
+      <script src="/javascript/common/bootstrap-4.6.0/js/bootstrap.bundle.min.js"></script>
+      <script>
+      	/* 
+      	
+      	$(document).ready(function() { //element
+      		var img1 = $("#img1");
+	      	img1.attr("src","/javascript/common/images/photo1.jpg");
+      	}); //자동으로 콜백
+      	
+      	*/
+      	
+      	$(function() {
+      		console.log("ready");
+      		var img1 = $("#img1");
+	      	img1.attr("src","/javascript/common/images/photo1.jpg");
+      	});
+      	
+      	//onload와 ready는 다름
+      	
+      	function init() {
+      		console.log("load");
+      	}
+      	
+      </script>
+      
+   </head>
+   <body onload="init()">
+      <div class="card">
+      	<div class="card-header">
+      		jQuery() 함수가 리턴하는 컬렉션 사용 방법
+      	</div>
+      	
+      	<div class="card-body">
+      		<img id="img1" src="/javascript/common/images/photo1.jpg" height="100"/>
+      		<img id="img2" src="/javascript/common/images/photo2.jpg" height="100"/>
+      		<img id="img3" src="/javascript/common/images/photo1.jpg" height="100"/>
+      		<img id="img4" src="/javascript/common/images/photo2.jpg" height="100"/>
+      		<img id="img5" src="/javascript/common/images/photo1.jpg" height="100"/>
+      	</div>
+      </div>
+   </body>
+</html>

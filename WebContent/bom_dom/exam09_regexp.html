@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Insert title here</title>
+      <link rel="stylesheet" href="/javascript/common/bootstrap-4.6.0/css/bootstrap.min.css">
+      <script src="/javascript/common/js/jquery-3.5.1.min.js"></script>
+      <script src="/javascript/common/bootstrap-4.6.0/js/bootstrap.bundle.min.js"></script>
+      <script src="/javascript/common/bootstrap-4.6.0/js/bootstrap.bundle.min.js"></script>
+      <script>
+      	const check = () => {
+      		var tel = document.querySelector("#tel");   
+      		var value = tel.value;
+      		//console.log(value);
+      		
+      		//010-123-1234, 010-1234-1234
+      		var patt = new RegExp(/010-\d{3,4}-\d{4}$/); //두번쨰는 3자리 아니면 4자리 세번째는 4자리
+      		//var patt = new RegExp("010-\\{3,4}-\\d{4}$");
+      		var result = patt.test(value);
+      		console.log(result);
+      	};
+      </script>   
+   </head>
+   <body>
+      <div class="card">
+      	<div class="form-group">
+      	<label>전화번호:</label>
+        <input id="tel" type="text" class="form-control"/>
+         </div>
+         <button class="btn btn-success btn-sm" onclick="check()">확인</button>
+      </div>
+   </body>
+</html>

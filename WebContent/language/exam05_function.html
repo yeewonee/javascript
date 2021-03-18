@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="common/bootstrap-4.6.0/css/bootstrap.min.css">
+		<script src="common/js/jquery-3.5.1.min.js"></script>
+		<script src="common/bootstrap-4.6.0/js/bootstrap.bundle.min.js"></script>
+		<script src="common/bootstrap-4.6.0/js/bootstrap.min.js"></script>			
+		<script>
+			function fun1() {
+				console.log("fun1() 실행");
+			}
+			
+			const fun2 = function() {
+				console.log("fun2() 실행");
+			};
+			
+			const fun3 = () => {
+				console.log("fun3() 실행");
+			};
+			
+			function fun4(arg1) {
+				console.log(arg1);	
+			}
+			
+			const fun5 = function(arg1) {
+				console.log(arg1);
+			};
+			
+			const fun6 = (arg1) => {
+				console.log(arg1);
+			};
+			
+			const fun7 = arg1 => {
+				console.log(arg1);
+			};
+			
+			const fun8 = arg1 => console.log(arg1);
+			
+			//--------------- 리턴값
+			function fun9(x, y) {
+				return x + y;
+			}
+			
+			const fun10 = function(x, y){
+				return x + y;
+			}
+			
+			const fun11 = (x, y) => {
+				console.log("aaaaaa");
+				return x + y;
+			}
+			
+			const fun12 = (x, y) => x + y;
+			
+			console.log(func9(2, 3));
+			console.log(func10(2, 3));
+			console.log(func11(2, 3));
+			console.log(func12(2, 3));
+			
+		</script>
+	</head>
+	<body>
+		<div class="card">
+			JavaScript Function
+		</div>
+		<div class="card-body">
+			<!-- 함수 선언 방법 -->
+			<button onclick="fun1()" class="btn btn-success btn-sm">fun1()</button>
+			<button onclick="fun2()" class="btn btn-success btn-sm">fun2()</button>
+			<button onclick="fun3()" class="btn btn-success btn-sm">fun3()</button>
+			<hr/>
+			<!-- 매개값 -->
+			<button onclick="fun4('hello')" class="btn btn-success btn-sm">fun4()</button>
+			<button onclick="fun5(3)" class="btn btn-success btn-sm">fun5()</button>
+			<button onclick="fun6(true)" class="btn btn-success btn-sm">fun6()</button>
+			<button onclick="fun7({a:3, b:5})" class="btn btn-success btn-sm">fun7()</button>
+			<button onclick="fun8({a:3, b:5})" class="btn btn-success btn-sm">fun8()</button>
+			<!-- 리턴값 -->
+			
+		</div>
+	</body>
+</html>

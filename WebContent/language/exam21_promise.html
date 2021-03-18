@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="common/bootstrap-4.6.0/css/bootstrap.min.css">
+		<script src="common/js/jquery-3.5.1.min.js"></script>
+		<script src="common/bootstrap-4.6.0/js/bootstrap.bundle.min.js"></script>
+		<script src="common/bootstrap-4.6.0/js/bootstrap.min.js"></script>			
+		<script>
+			/* 
+			const fun1 = () => { //가독성이 떨어짐
+				console.log("코드1 실행"); //비동기 작업 안에 작업이 많으면 복잡
+				setTimeout(function(){
+					console.log("코드2 실행");
+					setTimeout(function() {
+						console.log("코드3 실행")
+					}, 3000);
+				}, 3000);
+				console.log("코드4 실행");
+			}; */
+			
+			const fun1 = () => { //가독성이 떨어짐
+			var promise = new Promise(function(resolve, reject) { //객체 생성, 안에 function()이 콜백
+				console.log("시간을 요하는 작업...");
+				var result = true;
+				if(result) {
+					resolve(); //success callback
+				} else {
+					reject(); //failure callbacks
+				}
+			}); 
+			
+			//앞에 함수는 resolve일때, 뒤에 함수는 reject 일떄
+			//[방법1]
+			/* 
+			promise.then(
+					function() {
+						console.log("작업이 성공되었을 때 실행");
+					}, 
+					function() {
+						console.log("작업이 실패되었을 때 실행");
+					});
+			*/
+			
+			//[방법2]
+			promise
+				.then(function() {
+					console.log("작업이 성공되었을 때 실행");
+				})
+				.catch(function(){
+					console.log("작업이 실패되었을 때 실행");
+				})
+				.finally(function(){
+					console.log("작업이 성공 또는 실패되었을 때 마무리 작업");	
+				})
+			};
+		</script>
+</head>
+<body>
+	<div class="card">
+		<div class="card-header">
+			콜백 이해하기
+		</div>
+		<div class="card-body">
+			<button onclick="fun1()" class="btn btn-danger btn-xm">함수 호출</button>
+		</div>
+	</div>
+</body>
+</html>
